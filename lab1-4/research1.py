@@ -86,10 +86,13 @@ def uniform_distr_graphics(loc: float = 0, scale: float = 1, sizes: tuple = (10,
     plt.legend(fontsize=10, loc=1)
     plt.show()
 
-if __name__ == "__main__":
+def lab1():
     sample = (10, 50, 1000)
     normal_distr_graphics(sizes=sample)
     cauchy_distr_graphics(sizes=sample)
     laplace_distr_graphics(sizes=sample)
     poisson_distr_graphics(sizes=sample)
     uniform_distr_graphics(sizes=sample)
+
+if __name__ == "__main__":
+    lab1()
