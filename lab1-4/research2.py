@@ -44,22 +44,39 @@ def get_characteristics(generator, sample_size: tuple):
             z_tr += temp
             z_tr_2 += temp ** 2
 
+        mean /= iters
+        mean_2 /= iters
+        median /= iters
+        median_2 /= iters
+        z_R /= iters
+        z_R_2 /= iters
+        z_Q /= iters
+        z_Q_2 /= iters
+        z_tr /= iters
+        z_tr_2 /= iters
+
         d_mean = mean_2 - mean ** 2
         d_median = median_2 - median ** 2
         d_z_R = z_R_2 - z_R ** 2
         d_z_Q = z_Q_2 - z_Q ** 2
         d_z_tr = z_tr_2 - z_tr ** 2
 
-        characteristics[f'{num}']['mean'] = round(mean / iters, 4)
+        characteristics[f'{num}']['mean'] = round(mean, 4)
+        characteristics[f'{num}']['median'] = round(median, 4)
+        characteristics[f'{num}']['z_R'] = round(z_R, 4)
+        characteristics[f'{num}']['z_Q'] = round(z_Q, 4)
+        characteristics[f'{num}']['z_tr'] = round(z_tr, 4)
         characteristics[f'{num}']['d_mean'] = round(d_mean, 4)
-        characteristics[f'{num}']['median'] = round(mean / iters, 4)
         characteristics[f'{num}']['d_median'] = round(d_median, 4)
-        characteristics[f'{num}']['z_R'] = round(z_R / iters, 4)
         characteristics[f'{num}']['d_z_R'] = round(d_z_R, 4)
-        characteristics[f'{num}']['z_Q'] = round(z_Q / iters, 4)
         characteristics[f'{num}']['d_z_Q'] = round(d_z_Q, 4)
-        characteristics[f'{num}']['z_tr'] = round(z_tr / iters, 4)
         characteristics[f'{num}']['d_z_tr'] = round(d_z_tr, 4)
+
+        characteristics[f'{num}']['mean+'] = "[" + str(round(mean - np.sqrt(d_mean), 4)) + "; " + str(round(mean + np.sqrt(d_mean), 4)) + "]"
+        characteristics[f'{num}']['median+'] = "[" + str(round(median - np.sqrt(d_median), 4)) + "; " + str(round(median + np.sqrt(d_median), 4)) + "]"
+        characteristics[f'{num}']['z_R+'] = "[" + str(round(z_R - np.sqrt(d_z_R), 4)) + "; " + str(round(z_R + np.sqrt(d_z_R), 4)) + "]"
+        characteristics[f'{num}']['z_Q+'] = "[" + str(round(z_Q - np.sqrt(d_z_Q), 4)) + "; " + str(round(z_Q + np.sqrt(d_z_Q), 4)) + "]"
+        characteristics[f'{num}']['z_tr+'] = "[" + str(round(z_tr - np.sqrt(d_z_tr), 4)) + "; " + str(round(z_tr + np.sqrt(d_z_tr), 4)) + "]"
     # print(characteristics)
     return characteristics
 
