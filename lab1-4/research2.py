@@ -77,10 +77,9 @@ def get_characteristics(generator, sample_size: tuple):
         characteristics[f'{num}']['z_R+'] = "[" + str(round(z_R - np.sqrt(d_z_R), 4)) + "; " + str(round(z_R + np.sqrt(d_z_R), 4)) + "]"
         characteristics[f'{num}']['z_Q+'] = "[" + str(round(z_Q - np.sqrt(d_z_Q), 4)) + "; " + str(round(z_Q + np.sqrt(d_z_Q), 4)) + "]"
         characteristics[f'{num}']['z_tr+'] = "[" + str(round(z_tr - np.sqrt(d_z_tr), 4)) + "; " + str(round(z_tr + np.sqrt(d_z_tr), 4)) + "]"
-    # print(characteristics)
     return characteristics
 
-def lab2():
+def lab2() -> dict[dict]:
     sample_size = (10, 100, 1000)
     chars = dict()
     print("Processing...")

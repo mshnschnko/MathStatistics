@@ -83,7 +83,7 @@ def lab4():
     for n in [20, 60, 100]:
         kde(np.random.poisson(lam=10, size=n),
             lambda x: sps.poisson.pmf(x, 10),
-            np.linspace(6, 15, 10),
+            np.linspace(6, 14, 10),
             "Poisson")
     for n in [20, 60, 100]:
         kde(np.random.uniform(low=-np.sqrt(3.0), high=np.sqrt(3.0), size=n),
