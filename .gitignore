@@ -139,3 +139,6 @@ dmypy.json
 # xlsx
 *.xlsx
 *.csv
+
+*.pdf
+*.tex
