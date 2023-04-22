@@ -17,7 +17,7 @@ def chi_table(data):
     borders = np.append(borders, np.inf)
     
     table = []
-    table.append(['\hline i', 'Edges $\Delta_i$', '$n_i$', '$p_i$', 
+    table.append(['\hline i', 'Границы $\Delta_i$', '$n_i$', '$p_i$', 
                   '$np_i$', '$n_i - np_i$', '$\\frac{(n_i - np_i)^2}{np_i}$'])
     
     ns = []

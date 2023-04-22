@@ -55,8 +55,8 @@ def lab5():
     for size in [20, 60, 100]:
         table = []
         for p in [0, 0.5, 0.9]:
-            table.append(['$\\rho = ' + str(p) + '~(\\ref{ro})$', '$r ~(\\ref{r})$',
-            '$r_Q ~(\\ref{rQ})$', '$r_S ~(\\ref{rS})$'])
+            table.append(['$\\rho = ' + str(p) + '$', '$r$',
+            '$r_Q$', '$r_S$'])
             for param_sign, param_calc_f in zip(param_signs, [np.mean, lambda vals: np.mean(np.array(vals) ** 2), np.std]):
                 row = []
                 row.append(param_sign) 
@@ -68,7 +68,7 @@ def lab5():
     mix_table = []
     param_signs = ['$E(z)$', '$E(z^2)$', '$D(z)$']
     for size in [20, 60, 100]:
-        mix_table.append(['$n$ = ' + str(size), '$r ~(\\ref{r})$', '$r_Q ~(\\ref{rQ})$', '$r_S ~(\\ref{rS})$'])
+        mix_table.append(['$n$ = ' + str(size), '$r$', '$r_Q$', '$r_S$'])
         for param_sign, param_calc_f in zip(param_signs, [np.mean, lambda vals: np.mean(np.array(vals) ** 2), np.std]):
             row = []
             row.append(param_sign) 
