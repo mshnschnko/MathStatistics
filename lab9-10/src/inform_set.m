@@ -5,6 +5,7 @@ vertices = ir_beta2poly(irproblem)
 
 b_int = ir_outer(irproblem)
 
+figure
 hold on
 x = vertices(:, 1)
 y = vertices(:, 2)

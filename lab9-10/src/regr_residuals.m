@@ -2,6 +2,7 @@ x = (1 : size(input, 1)).'
 
 residuals1 = input_int - tau1(1) - tau1(2) .* x
 
+figure
 hold on
 errorbar(mid(residuals1), rad(residuals1), "b")
 plot(x, zeros(size(x, 1)), "r")

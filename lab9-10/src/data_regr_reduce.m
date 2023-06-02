@@ -1,6 +1,7 @@
 [tau2, w2, yint2] = DataLinearModelZ(input, eps)
 sum_w2 = sum(w2)
 
+figure
 hold on
 errorbar(input, eps, "b")
 x = [1, size(input, 1)]

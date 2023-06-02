@@ -2,6 +2,7 @@ setenv ("OCTAVE_LATEX_DEBUG_FLAG", "1")
 
 alpha = sum_w2 / 100
 
+figure
 hold on
 
 plot(w1)
